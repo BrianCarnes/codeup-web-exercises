@@ -113,8 +113,23 @@ productOffer(1,true,true);
 
 
 // Problem 4 Abstractions //
-let userNameLength = username => username.length <= 20 ? username : console.log("Please enter a username less than 20 characters.");
-let userNameWhiteSpace = username => username[0] !== " " && username[username.length-1] !== " " ? username : console.log("Please do not use a space to start or end your username.");
-let passwordFiveCharsOrMore = password => password.length >= 5 ? password : console.log("Please enter a password greater than five characters.");
-let passwordNotUsername = (password, username) => password !== username ? password : console.log("Please enter a password that is not your username.");
-let passwordWhiteSpace = password => password[0] !== " " && password[password.length-1] !== " " ? password : console.log("Please do not use a space to start or end your password.");
+// let userNameLength = username => username.length <= 20 ? username : console.log("Please enter a username less than 20 characters.");
+// let userNameWhiteSpace = username => username[0] !== " " && username[username.length-1] !== " " ? username : console.log("Please do not use a space to start or end your username.");
+// let passwordFiveCharsOrMore = password => password.length >= 5 ? password : console.log("Please enter a password greater than five characters.");
+// let passwordNotUsername = (password, username) => password !== username ? password : console.log("Please enter a password that is not your username.");
+// let passwordWhiteSpace = password => password[0] !== " " && password[password.length-1] !== " " ? password : console.log("Please do not use a space to start or end your password.");
+
+function username() {
+    let enterUsername = prompt("Please enter a username that is less than 20 characters and does not start or end with a space.");
+    while(enterUsername.length >= 20 || enterUsername[0] === " " || enterUsername[enterUsername.length-1] === " ") {
+        enterUsername = prompt("Please enter a username that is less that 20 characters and does not start or end with a space.");
+    }
+}
+function password(username) {
+    let enterPassword = prompt("Create a password that is greater that 5 characters, is not that same as your username, and does not have a space at the beginning or end or your password.")
+    while(enterPassword.length < 5 || enterPassword === username || enterPassword[0] === " " || enterPassword[enterPassword.length-1] === " ") {
+        enterPassword = prompt("Create a password that is greater that 5 characters, is not that same as your username, and does not have a space at the beginning or end of your password.");
+    }
+}
+username();
+password(username);
