@@ -95,7 +95,7 @@ console.log(sample.indexOf("c")); //-1
 console.log(sample.indexOf("C")); //6
 console.log(sample.substring(sample.indexOf("C"),sample.indexOf("C")+6));
 
-
+// Problem 3 //
 let movies = (BB, LM, Herc) => (BB + LM + Herc)*3;
 console.log(movies(3,5,1));
 
@@ -107,3 +107,14 @@ enrollment(true, true);
 
 let productOffer = (items, expired, premium) => items >= 2 && expired === false || premium === true ? console.log("discount applied") : console.log("no discount");
 productOffer(1,true,true);
+///////////////
+// Problem 4 //
+
+
+
+// Problem 4 Abstractions //
+let userNameLength = username => username.length <= 20 ? username : console.log("Please enter a username less than 20 characters.");
+let userNameWhiteSpace = username => username[0] !== " " && username[username.length-1] !== " " ? username : console.log("Please do not use a space to start or end your username.");
+let passwordFiveCharsOrMore = password => password.length >= 5 ? password : console.log("Please enter a password greater than five characters.");
+let passwordNotUsername = (password, username) => password !== username ? password : console.log("Please enter a password that is not your username.");
+let passwordWhiteSpace = password => password[0] !== " " && password[password.length-1] !== " " ? password : console.log("Please do not use a space to start or end your password.");
