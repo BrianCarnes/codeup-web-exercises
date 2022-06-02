@@ -7,9 +7,10 @@ alert(`Great, ${userFavoriteColor} is my favorite color too!`)
 
 let movies = () => {
     let BB = prompt("How many days have you had Brother Bear?");
+    console.log(typeof BB);
     let LM = prompt("How many days have you had The Little Mermaid?");
     let Herc = prompt("How many days have you had Hercules?")
-    let Total = (3 * Herc) + (3 * BB) + (3 * LM);
+    let Total = (parseInt(BB) + parseInt(LM) + parseInt(Herc)) * 3;
     alert(`You owe Blockbusters $${Total}.00`)
     console.log(`${BB}, ${LM}, ${Herc}, ${Total}`)
 }
