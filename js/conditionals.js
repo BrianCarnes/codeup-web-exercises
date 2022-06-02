@@ -154,10 +154,10 @@ calculateTotal(luckyNumber, prompt("What is the total of your bill?"))
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-let threeSeparateAlerts = (function (boo, x = 1) {
-    if (boo === true) {
+let threeSeparateAlerts = (function (bool, x = 1) {
+    if (bool === true) {
         x = parseFloat(prompt("Pick a number, any number."));
-        if (x !== Number) {
+        if (typeof x !== "number") {
             alert("Please enter a valid number)");
             x = parseFloat(prompt("Pick a number, any number."));
         } else return x;
@@ -175,4 +175,5 @@ let threeSeparateAlerts = (function (boo, x = 1) {
     }
 })
 threeSeparateAlerts(confirm("Would you like to proceed? >:)"));
+
 })();
