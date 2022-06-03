@@ -8,10 +8,10 @@
      * Example
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
-    let sayHello = (function (name) {
-        name = prompt("Report thy name!")
+    function sayHello (name) {
+        // name = prompt("Report thy name!")
         alert(`Hello, ${name}! Thou shall my perform my bidding`)
-    })
+    }
 
     /**
      * TODO:
@@ -20,14 +20,16 @@
      *
      * console.log 'helloMessage' to check your work
      */
-    sayHello("Veigar");
+    let helloMessage = sayHello("Brian")
+    console.log(helloMessage)
     /**
      * TODO:
      * Store your name as a string in a variable named 'myName', and pass that
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
-
+    let myName = "Brian"
+    sayHello(myName);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
     let random = Math.floor((Math.random() * 3) + 1);
@@ -64,9 +66,9 @@
      * > calculateTip(0.25, 25.50) // returns 6.375
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
-    let calculateTip = (function (tip) {
+    function calculateTip (tip) {
         alert(`The following are standard tip amounts: \n 15% is $${tip * .15} \n 18% is $${tip * .18} \n 20% is $${tip * .2}`)
-    })
+    }
 // calculateTip(10)
     /**
      * TODO:
