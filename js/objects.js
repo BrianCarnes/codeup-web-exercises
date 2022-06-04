@@ -70,6 +70,23 @@
 	 * > console.log(books[0].author.firstName) // "Douglas"
 	 * > console.log(books[0].author.lastName) // "Adams"
 	 */
+	let books = [
+		{
+			author: {
+				firstName: "Patrick",
+				lastName: "Rothfuss"
+			},
+			title: ["The Name of the Wind", "The Wise Man's Fear", "The Slow Regard of Silent Things" ]
+
+		},
+		{
+			author: {
+				firstName: "Brandon",
+				lastName: "Sanderson"
+			},
+			title: ["Mistborn", "The Well of Ascension", "The Hero of Ages"]
+		}
+	]
 
 	/**
 	 * TODO:
@@ -95,7 +112,17 @@
 	 *      ---
 	 *      ...
 	 */
+	function bookDirectory(array) {
+		for (let key in array) {
+			for (let property in array[key]) {
+				console.log("Title #" + array.title)
+			}
+		}
+	}
 
+
+	// console.log(Object.keys(books.title));
+	bookDirectory(books);
 	/**
 	 * Bonus:
 	 * - Create a function named `createBook` that accepts a title and author
