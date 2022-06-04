@@ -113,15 +113,15 @@
 	 *      ...
 	 */
 	function bookDirectory(array) {
-		for (let key in array) {
-			for (let property in array[key]) {
-				console.log("Title #" + array.title)
-			}
-		}
+		let i = 0;
+		array.forEach(function(key){
+			key.title.forEach(function(parameter) {
+			console.log("---\nBook #" + (i+1) + "\nTitle: " + parameter + "\nAuthor: " + key.author.firstName + " " + key.author.lastName + "\n---")
+			i++;
+			})
+		})
 	}
 
-
-	// console.log(Object.keys(books.title));
 	bookDirectory(books);
 	/**
 	 * Bonus:
