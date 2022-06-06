@@ -19,12 +19,16 @@ function randomNumberChecker () {
 }
 
 function numberPyramid () {
-    for (let i = 0; i < 11; i++){
+    let pyramid = "";
+    for (let i = 0; i < 10; i++){
         for (let j = 0; j < i; j++) {
-            console.log(i);
+            pyramid += i;
         }
+        pyramid += "\n";
     }
+    console.log(pyramid)
 }
+numberPyramid();
 
 function fiveMultiplicationTable () {
     for (let i = 20; i < 0; i--) {
