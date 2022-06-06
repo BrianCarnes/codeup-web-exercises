@@ -133,7 +133,15 @@
 	 *   outputs the information described above. Refactor your loop to use your
 	 *   `showBookInfo` function.
 	 */
-	function createBook (title, author) {
-		let books = {}
+	function createBook (titleToBeConverted, authorToBeConverted) {
+		let newBook;
+		newBook = [{title: titleToBeConverted, author: authorToBeConverted}];
+		return newBook;
 	}
+	function showBookInfo (bookObjectToParse) {
+		bookObjectToParse.forEach(function(key) {
+			console.log("The Title is " + key.title + " and the Author is " + key.author)
+		})
+	}
+	showBookInfo(createBook("The Art of Coding", "Kenneth Howell"));
 })();
