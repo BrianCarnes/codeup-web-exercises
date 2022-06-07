@@ -4,32 +4,70 @@
     <meta charset="UTF-8">
     <title>Register With Us</title>
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corben&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script%7CPoppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<form action="action_page.php">
-    <div class="container">
-        <h1>Register</h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-        <hr>
-
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button type="submit" class="registerbtn">Register</button>
+<div class="container">
+    <div class="brand-logo">
+        <h1>RF</h1>
     </div>
-
-    <div class="container signin">
-        <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <div class="brand-title">REGISTER FORM</div>
+    <div class="inputs">
+        <form>
+        <label for="email">EMAIL</label>
+        <input id="email" type="email" placeholder="example@test.com" />
+        <label for="password">PASSWORD</label>
+        <input id="password" type="password" placeholder="Min 6 characters long" />
+        <label for="BIO">BIO</label>
+        <textarea id="BIO" name="BIO" placeholder="Enter your Bio"></textarea>
+        <button id="button" class ="button" type="submit">
+            <span id="btntext">LOGIN</span>
+            <span id="fa" class="fa fa-check"></span>
+        </button>
+        </form>
     </div>
-</form>
+</div>
+
+<div class="container2">
+    <div class="brand-title">HOW DID YOU HEAR ABOUT US</div>
+    <div class="radiogroup">
+        <div class="wrapper">
+            <input class="state" type="radio" name="app" id="a" value="a">
+            <label class="label" for="a">
+                <div class="indicator"></div>
+                <span class="text">billboard</span>
+            </label>
+        </div>
+        <div class="wrapper">
+            <input class="state" type="radio" name="app" id="b" value="b">
+            <label class="label" for="b">
+                <div class="indicator"></div>
+                <span class="text">radio advertisement</span>
+            </label>
+        </div>
+        <div class="wrapper">
+            <input class="state" type="radio" name="app" id="c" value="c">
+            <label class="label" for="c">
+                <div class="indicator"></div>
+                <span class="text">internet advertisement</span>
+            </label>
+        </div>
+        <div class="wrapper">
+            <input class="state" type="radio" name="app" id="d" value="d">
+            <label class="label" for="d">
+                <div class="indicator"></div>
+                <span class="text">other</span>
+            </label>
+        </div>
+    </div>
+</div>
+<script src="js/forms.js"></script>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>
