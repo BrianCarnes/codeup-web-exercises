@@ -34,3 +34,27 @@ function iceCreamStory() {
 }
 
 iceCreamStory();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Randomize amount of all cones - fixed
+// initialize cones remaining
+// initialize cones sold
+// write a while loop that evaluates cones sold with respect to total inventory of cones
+// randomize how many cones you sell each time
+// store how many cones you have remaining
+// conditionally evaluate if you're trying to sell more cones than you have and if you still have cones remaining
+// close out the loop if you sell all of your cones
+// increase your counter

@@ -31,7 +31,11 @@ function numberPyramid () {
 numberPyramid();
 
 function fiveMultiplicationTable () {
+    let counter = "";
     for (let i = 20; i < 0; i--) {
-        console.log(i * 5)
+        counter += i;
+        counter += "\n";
     }
+    console.log(counter);
 }
+fiveMultiplicationTable();
