@@ -4,7 +4,7 @@ body {
     display: grid;
     place-items: center;
     font: 2vw system-ui;
-    background-color: #fffdd0;
+    background-color: #ADD8E6;
 }
 body p {
     transform: translatey(0px);
@@ -15,12 +15,12 @@ body p {
     font-weight: bold;
     letter-spacing: 3px;
     font-size: 15px;
-    color: #FFF;
-    background-color: #907860;
+    color: #e9e9e9;
+    background-color: #3c6f36;
     padding: 50px;
     border-radius: 11px;
     position: relative;
-    box-shadow: 20px 20px #003018;
+    box-shadow: 20px 20px #8f705e;
     font-family: 'IBM Plex Mono', monospace;
 }
 body p:after {
@@ -28,20 +28,20 @@ body p:after {
     animation: float2 5s ease-in-out infinite;
     content: ".";
     font-weight: bold;
-    -webkit-text-fill-color: #907860;
-    text-shadow: 22px 22px #003018;
+    -webkit-text-fill-color: #3c6f36;
+    text-shadow: 22px 22px #8f705e;
     text-align: left;
     font-size: 55px;
     width: 55px;
     height: 11px;
     line-height: 30px;
     border-radius: 11px;
-    background-color: #907860;
+    background-color: #3c6f36;
     position: absolute;
     display: block;
     bottom: -30px;
     left: 0;
-    box-shadow: 22px 22px #003018;
+    box-shadow: 22px 22px #8f705e;
     z-index: -2;
 }
 @keyframes float {

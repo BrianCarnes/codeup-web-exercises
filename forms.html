@@ -30,13 +30,14 @@
             <span id="btntext">LOGIN</span>
             <span id="fa" class="fa fa-check"></span>
         </button>
+
         </form>
     </div>
 </div>
 
 <div class="container2">
     <div class="brand-title">HOW DID YOU HEAR ABOUT US</div>
-    <div class="radiogroup">
+    <div class="radiogroup" id="radiogroup">
         <div class="wrapper">
             <input class="state" type="radio" name="app" id="a" value="a">
             <label class="label" for="a">
@@ -60,13 +61,20 @@
         </div>
         <div class="wrapper">
             <input class="state" type="radio" name="app" id="d" value="d">
-            <label class="label" for="d">
+            <label id="other" class="label" for="d">
                 <div class="indicator"></div>
                 <span class="text">other</span>
             </label>
         </div>
     </div>
+    <ul class="options" id="options">
+        <li oName="option1" id="Employee" class="text">Employee</li>
+        <li oName="option2" id="Social Media" class="text">Social Media</li>
+        <li oName="option3" id="Coffee Shop" class="text">Coffee Shop</li>
+        <li oName="option4" id="Search Engine" class="text">Search Engine</li>
+    </ul>
 </div>
+
 <script src="js/forms.js"></script>
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
