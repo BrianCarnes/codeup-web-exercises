@@ -48,8 +48,8 @@
 		{name: 'George', amount: 320}
 	];
 
-	function totalPrice(array) {
-		array.forEach(function(name) {
+	function totalPrice(shopperArray) {
+		shopperArray.forEach(function(name) {
 			if (name.amount >= 200) {
 				console.log(`${name.name} your original bill was $${name.amount}, but after the promotional discount your bill is now $${name.amount * .88}`)
 			} else {
