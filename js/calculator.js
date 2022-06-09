@@ -10,10 +10,10 @@ let total = document.querySelector("#total");
 let ButtonSpread = [...Buttons];
 let allButtonSpread = [...allButtons];
 
-// For Number Inputs
+// Accept Number Inputs
 ButtonSpread.forEach((button, i) => {
 	button.addEventListener("click", () => {
-		// Inner Values for calculator
+		// Inner Values for calculator stored as a string
 
 		if (resultBox.innerHTML === "0") {
 			resultBox.innerHTML = "";
@@ -25,7 +25,7 @@ ButtonSpread.forEach((button, i) => {
 });
 
 // Function to evaluate Strings
-function evaluate(buttonsCombined) {
+let evaluate = (buttonsCombined) => {
 	return new Function('return ' + buttonsCombined)();
 }
 

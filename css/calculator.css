@@ -33,10 +33,10 @@ body {
     height: 150px;
 }
 .container .result p {
+    color: rgba(0,0,0,.8);
     font-size: 43pt;
     overflow-y: auto;
     text-align: right;
-
 }
 
 .container .buttons {
@@ -78,10 +78,14 @@ body {
     background-color: #FEFEFE;
     box-shadow: 4px 4px 4px 0 #d1d9e6 inset,
     -4px -4px 4px 0 #ffffff inset;
-
 }
 
 #total{
     color: #8d1eff;
     font-weight: bold;
+}
+
+.result p {
+    padding-right: 5px;
+    padding-left: 5px;
 }
