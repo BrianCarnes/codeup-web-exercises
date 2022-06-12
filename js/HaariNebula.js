@@ -1,9 +1,11 @@
+import { OrbitControls } from "https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js";
+
 let scene, camera, cloudParticles = [],composer;
 
 function nebulaCloud() {
 	/* Establish Scene */
 	scene = new THREE.Scene();
-	camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight,1,1000);
+	camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,1,1000);
 	camera.position.z = 1;
 	camera.rotation.x = 1.16;
 	camera.rotation.y = -0.12;
@@ -30,7 +32,7 @@ function nebulaCloud() {
 	/* Establish Renderer */
 	let renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth,window.innerHeight);
-	scene.fog = new THREE.FogExp2(0x03544e, 0.001);
+	scene.fog = new THREE.FogExp2(0x310047, 0.001);
 	renderer.setClearColor(scene.fog.color);
 	document.body.appendChild(renderer.domElement);
 
@@ -96,11 +98,15 @@ function nebulaCloud() {
 		console.error( 'An error happened.' );
 	});
 }
+
+/* Resize protection */
 function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
+/* Particle Renderer */
 function render() {
 	cloudParticles.forEach(p => {
 		p.rotation.z -=0.001;
@@ -108,4 +114,5 @@ function render() {
 	composer.render(0.1);
 	requestAnimationFrame(render);
 }
+
 nebulaCloud();
