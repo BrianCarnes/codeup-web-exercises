@@ -36,7 +36,7 @@
     });
     /**
      * TODO:
-     * Create the following three functions, each will accept an array and
+     * Create the following three.js functions, each will accept an array and
      * return an an element from it
      * - first: returns the first item in the array
      * - second: returns the second item in the array
