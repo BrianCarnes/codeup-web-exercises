@@ -54,9 +54,10 @@ const longestEmail = users.reduce(function(a, b){
 	} return b;
 })
 
-const oneName = users.reduce(function(placeHolder,names){
+let oneName = users.reduce(function(placeHolder,names){
 	return names.name + " " + placeHolder;
 },"")
+
 
 const bonus = users.map(function(language) {
 	return language.languages;
