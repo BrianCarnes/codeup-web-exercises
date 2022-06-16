@@ -79,7 +79,7 @@ button {
     margin: .5em;
 }
 .profile-details {
-    width: 23%;
+    width: calc(25% - 0.4em);
     margin: 0 .4em;
     float: left;
 }
