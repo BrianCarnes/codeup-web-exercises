@@ -6,7 +6,9 @@
 body, html {
     height: 100%;
     width: 100%;
-    background: linear-gradient(180deg, #845ec2, #d65db1, #ff6f91, #ff9671);
+    background-image: url("../img/stars.jpg"), linear-gradient(180deg, #845ec2, #d65db1, #ff6f91, #ff9671);
+    background-size: cover;
+    background-blend-mode: color-dodge;
     font-family: "Helvetica Neue", Ubuntu, sans-serif;
 }
 
