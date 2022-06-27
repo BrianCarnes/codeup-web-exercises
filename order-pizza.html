@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Pizzapunk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,14 +14,17 @@
     <style>
         body {
             font-family: 'Orbitron', sans-serif !important;
-            background-image: url("img/cyberpunkwp.jpg");
+            background-image: url("img/cyberpunk.gif");
+            background-attachment: fixed;
             background-size: cover;
             color: #7a04eb;
             background-repeat: no-repeat;
         }
+
         .form-control::placeholder {
             color: #7a04eb;
         }
+
         .btn-outline {
             color: #7a04eb;
             background-color: #fe75fe;
@@ -29,14 +32,6 @@
             font-weight: bold;
             letter-spacing: 0.05em;
             border-radius: 5px;
-        }
-
-        .btn-outline {
-            color: #7a04eb;
-            background-color: #fe75fe;
-            border-color: #7a04eb;
-            font-weight: bold;
-
         }
 
         .btn-outline:hover,
@@ -48,12 +43,48 @@
             border-color: #7a04eb;
 
         }
+
+        button {
+            color: #fefefe!important;
+            background: transparent!important;
+        }
+
+        button:hover {
+            border: solid 1px #fcd75d!important;
+        }
+
+        button:focus{
+            background: #7a04eb!important;
+            color: rgba(255,214,94, 1)!important;
+        }
+        .active {
+            background: #7a04eb!important;
+            color: rgba(255,214,94, 1)!important;
+        }
+        .card {
+            background: #eeeeee!important;
+            border: #7a04eb solid 1px;
+        }
+        .card-header {
+            color: #7a04eb!important;
+            background-color: #fefefe!important;
+            font-weight: bold;
+        }
         .docrob-tron {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 260px;
+            height: 100px;
             align-items: center;
+            margin-bottom: 30px;
+        }
+
+        form li {
+            background: #fafafa!important;
+        }
+
+        .form-check {
+            background: #eeeeee!important;
         }
     </style>
 </head>
@@ -61,24 +92,30 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand navbar-light" style="background-color: #fe75fe;">
     <div class="container-fluid">
-        <img src="img/pizzaSignAsset%201.svg"  alt="neon pizza sign" style="height: 80px;">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="img/pizzaSignAsset%201.svg" alt="neon pizza sign" style="height: 80px;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: #7a04eb;" aria-current="page" href="#">Order Online</a>
+                    <a class="nav-link" style="color: #7a04eb;" aria-current="page" href="#">Order Online</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: #7a04eb;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: #7a04eb;"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Menu
                     </a>
-                    <ul class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" style="color: #7a04eb;" href="#">Size and Crust</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" style="color: #7a04eb;" href="#">Cheese and Sauce</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" style="color: #7a04eb;" href="#">Toppings</a></li>
                     </ul>
                 </li>
@@ -88,7 +125,8 @@
                 <button class="btn btn-outline btn-lg" style="width: 10em;">Eat Me</button>
             </form>
             <div class="ms-auto">
-                <img src="img/CyberGuyAsset%202.svg" alt="Cyberpunk themed man icon" style="height: 8vh; margin: 0 1em;">
+                <img src="img/CyberGuyAsset%202.svg" alt="Cyberpunk themed man icon"
+                     style="height: 8vh; margin: 0 1em;">
                 <button class="btn btn-outline btn-lg">Sign In</button>
             </div>
         </div>
@@ -96,27 +134,36 @@
 </nav>
 
 <!-- JUMBOTRON -->
-<div class="docrob-tron" style="<!--background-image: url('../img/pizzaLong.jpeg') -->; background-size: 100vw 520px;">
-    <h2 class="pt-3 pb-3 text-center w-100 pe-2" style="background-color: rgba(255,214,94,0.8); color: #120458;">Welcome to Pizzapunk!</h2>
+<div class="docrob-tron" style="background-size: 100vw 100px;">
+    <h2 class="pt-3 pb-3 text-center w-100 pe-2" style="background-color: rgba(255,214,94,0.8); color: #120458;">Welcome
+        to Pizzapunk!</h2>
 </div>
 
 <!-- CARD MENU -->
 <div class="d-flex justify-content-center align-items-center flex-wrap ms-auto me-auto" style="width: 50rem;">
-    <h2 class="mb-3" style="color: rgb(255,214,94);">FABRICATE YOUR OWN PIZZA</h2>
+    <h2 class="mb-3 ps-1 pe-1" style="background: #7a04eb; color: rgb(255,214,94); border-radius: 5px; border: #fe75fe solid 1px;">FABRICATE YOUR OWN PIZZA</h2>
+    <!-- MENU OPTIONS -->
     <ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Size and Crust</button>
+            <button class="nav-link active" id="size-tab" data-bs-toggle="pill" data-bs-target="#pills-size"
+                    type="button" role="tab" aria-controls="pills-size" aria-selected="true">Size and Crust
+            </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Cheese and Sauce</button>
+            <button class="nav-link" id="cheese-tab" data-bs-toggle="pill" data-bs-target="#pills-cheese" type="button"
+                    role="tab" aria-controls="pills-cheese" aria-selected="false">Cheese and Sauce
+            </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Toppings</button>
+            <button class="nav-link" id="toppings-tab" data-bs-toggle="pill" data-bs-target="#pills-toppings"
+                    type="button" role="tab" aria-controls="pills-toppings" aria-selected="false">Toppings
+            </button>
         </li>
     </ul>
 </div>
+<!-- Tab One -->
 <div class="tab-content me-auto ms-auto" id="pills-tabContent" style="width: 50rem;">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane fade show active" id="pills-size" role="tabpanel" aria-labelledby="pills-size">
         <div class="card">
             <div class="card-header list-group-item-info" id="SizeCrust">
                 Choose Size and Crust
@@ -127,14 +174,16 @@
                         Hand Tossed
                     </div>
                     <div class="card-body">
-                        <p class="card-text">Garlic-seasoned crust with a rich, buttery taste.</p>
+                        <p class="card-text" style="color: #000400;">Garlic-seasoned crust with a rich, buttery taste.</p>
                     </div>
                     <form>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="small" id="small">
+                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="small"
+                                                                                    id="small">
                                 <label for="small">Small &rarr; 10"</label>
                             </li>
-                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="medium" id="medium1">
+                            <li class="list-group-item list-group-item-info"><input type="radio" name="q1"
+                                                                                    value="medium" id="medium1">
                                 <label for="medium1">Medium &rarr; 12"</label>
                             </li>
                         </ul>
@@ -147,25 +196,32 @@
                         Crunchy Thin Crust
                     </div>
                     <div class="card-body">
-                        Thin enough for the optimum crispy to crunchy ratio.
+                        <p class="m-0" style="color: #000400;">Thin enough for the optimum crispy to crunchy ratio.</p>
                     </div>
+                   <form>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="medium" id="medium">
+                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="medium"
+                                                                                id="medium">
                             <label for="medium">Medium &rarr; 12"</label>
                         </li>
-                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="large" id="large">
+                        <li class="list-group-item list-group-item-info"><input type="radio" name="q1" value="large"
+                                                                                id="large">
                             <label for="large">Large &rarr; 14"</label>
                         </li>
                     </ul>
+                   </form>
                 </div>
             </section>
+            <!-- First Next Button -->
             <div class="card margin-top">
                 <div class="card-body card-grey">
-                    <a href="#CheeseSauce" class="btn btn-primary ms-auto">Next step ></a>
+                    <a href="#CheeseSauce" id="tab1-next-btn" class="btn btn-outline btn-lg ms-auto" style="background-color: rgba(255,214,94, 1)!important;">Next step ></a>
                 </div>
             </div>
+        </div>
     </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <!-- Second Tab -->
+    <div class="tab-pane fade" id="pills-cheese" role="tabpanel" aria-labelledby="pills-cheese">
         <div class="card">
             <div class="card-header list-group-item-info" id="CheeseSauce">
                 Choose Cheese and Sauce
@@ -176,8 +232,8 @@
                         Cheese
                     </div>
                     <div class="form-group">
-                        <label for="FormControlSelect1">Cheese</label>
-                        <select class="form-list form-control" id="FormControlSelect1">
+                        <label style="color: #000400; margin-left: 2%;" for="FormControlSelect1">Cheese</label>
+                        <select style="background: rgba(255,214,94,.6)" class="form-list form-control" id="FormControlSelect1">
                             <option>Light</option>
                             <option>Normal</option>
                             <option>Extra</option>
@@ -192,8 +248,8 @@
                         Sauce
                     </div>
                     <div class="form-group">
-                        <label for="FormControlSelect2">What type?</label>
-                        <select class="form-list form-control" id="FormControlSelect2">
+                        <label style="color: #000400;" class="ms-3" for="FormControlSelect2">What type?</label>
+                        <select class="form-list form-control" style="background: rgba(255,214,94,.6)" id="FormControlSelect2">
                             <option>Tomato sauce</option>
                             <option>Marinara sauce</option>
                             <option>BBQ sauce</option>
@@ -201,8 +257,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="FormControlSelect3">How much?</label>
-                        <select class="form-list form-control" id="FormControlSelect3">
+                        <label style="color: #000400;" class="ms-3" for="FormControlSelect3">How much?</label>
+                        <select class="form-list form-control" style="background: rgba(255,214,94,.6)" id="FormControlSelect3">
                             <option>Light</option>
                             <option>Normal</option>
                             <option>Extra</option>
@@ -211,14 +267,18 @@
                     </div>
                 </div>
             </section>
+            <!-- Tab 2 Next Step and Previous Step Buttons -->
             <div class="card margin-top">
                 <div class="card-body card-grey">
-                    <a href="#Toppings" class="btn btn-primary float-right">Next step ></a>
-                    <a href="#CheeseSauce" class="btn btn-primary float-right">< Previous step</a>
+                    <a href="#CheeseSauce" id="tab2-prev-btn" class="btn btn-outline btn-lg" style="background-color: rgba(255,214,94, 1)!important;">< Previous
+                        step</a>
+                    <a href="#Toppings" id="tab2-next-btn" class="btn btn-outline btn-lg" style="background-color: rgba(255,214,94, 1)!important; float: right;">Next step ></a>
                 </div>
             </div>
+        </div>
     </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <!-- Tab 3 -->
+    <div class="tab-pane fade" id="pills-toppings" role="tabpanel" aria-labelledby="pills-toppings">
         <div class="card">
             <div class="card-header list-group-item-info" id="Toppings">
                 Choose Toppings
@@ -230,19 +290,23 @@
                     </div>
                     <div class="list-group-item-info">
                         <div class="form-check form-group">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                   value="option1">
                             <label class="form-check-label" for="inlineCheckbox1">Beef</label>
                         </div>
                         <div class="form-check form-group">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                   value="option2">
                             <label class="form-check-label" for="inlineCheckbox2">Ham</label>
                         </div>
                         <div class="form-check form-group">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                   value="option1">
                             <label class="form-check-label" for="inlineCheckbox3">Philly Steak</label>
                         </div>
                         <div class="form-check form-group">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option2">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4"
+                                   value="option2">
                             <label class="form-check-label" for="inlineCheckbox4">Bacon</label>
                         </div>
                     </div>
@@ -256,29 +320,56 @@
                     <div class="list-group-item-info">
                         <form>
                             <div class="form-check form-group">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5"
+                                       value="option1">
                                 <label class="form-check-label" for="inlineCheckbox5">Green Peppers</label>
                             </div>
                             <div class="form-check form-group">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option2">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6"
+                                       value="option2">
                                 <label class="form-check-label" for="inlineCheckbox6">Mushrooms</label>
                             </div>
                             <div class="form-check form-group">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option1">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7"
+                                       value="option1">
                                 <label class="form-check-label" for="inlineCheckbox7">Onions</label>
                             </div>
                             <div class="form-check form-group">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option2">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8"
+                                       value="option2">
                                 <label class="form-check-label" for="inlineCheckbox8">Jalepeno Peppers</label>
                             </div>
                         </form>
                     </div>
                 </div>
             </section>
+        </div>
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 <!-- Your custom JS goes here -->
+<script>
+	// for tab pane button functionality,
+	// the only complete solution I found was using JS to force-click a particular tab
+	(function () {
+		// add a click listener to the button on the first tab pane
+		document.querySelector("#tab1-next-btn").addEventListener("click", function (event) {
+			// grab a reference to the TAB for the first pane (not the pane itself)
+			const homeTab = document.querySelector("#cheese-tab");
+			// force-click it
+			homeTab.click();
+		});
+		document.querySelector("#tab2-prev-btn").addEventListener("click", function (event) {
+			const homeTab = document.querySelector("#size-tab");
+			homeTab.click();
+		});
+		document.querySelector("#tab2-next-btn").addEventListener("click", function (event) {
+			const homeTab = document.querySelector("#toppings-tab");
+			homeTab.click();
+		});
+	})();
+</script>
 </body>
 </html>
