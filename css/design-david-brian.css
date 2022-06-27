@@ -1,0 +1,79 @@
+body {
+    background: #FFF8E6!important;
+    font-family: 'Gentium Book Basic', serif;
+    color: #2f404f!important;
+}
+
+/*!* row color *!*/
+/*div.row {*/
+/*    border: 1px dashed blue;*/
+/*}*/
+/*!* cell color *!*/
+/*div.row > div {*/
+/*    border: 1px solid red;*/
+/*}*/
+/*div.tall-row {*/
+/*    height: 300px;*/
+/*}*/
+
+a{
+    text-decoration: none;
+    font-family: 'Gentiu Book Basic', serif;
+}
+.navbar-brand {
+    font-size: 2rem!important;
+    color: #f64c3f !important;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.nav-link {
+    color: #2f404f!important;
+}
+
+.design {
+    background-color: #F64C3F!important;
+    height: 100px;
+    width: 100px;
+    border: 4px solid #2f404f;
+    border-radius: 50%;
+}
+
+.develop {
+    background: #F1C455!important;
+    border: 4px solid #2f404f;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.support {
+    background: #68C5B0!important;
+    border: 4px solid #2f404f;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.host {
+    background: #24646D!important;
+    border: 4px solid #2f404f;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+h1, h2, h3 {
+    font-family: 'Alfa Slab One', cursive;
+}
+h4, h5, h6 {
+    font-family: 'Gentiu Book Basic', serif;
+    color: #24646d!important;
+    font-size: 2rem;
+}
+p {
+    color: #f0f0f0;
+    font-family: 'Alfa Slab One', cursive;
+    margin: 0;
+    text-align: center;
+    line-height: 85px;
+}
