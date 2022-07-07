@@ -96,3 +96,7 @@
     })
     applyDiscount(prompt("What is the total amount?"), prompt("How big is the discount?"));
 })()
+
+let array = ['John', 'Paul', 'George', 'Ringo', 'Santana'];
+console.log(array[array.length - 2]);
+

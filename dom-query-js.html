@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +9,11 @@
     <style>
         html,
         body {
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            background-color: navajowhite;
+            /*background: navajowhite;*/
             font-family: 'Bebas Neue', cursive;
         }
 
@@ -56,12 +54,13 @@
             animation-delay: 2.5s;
             left: -100%;
         }
+
         .boxy {
             display: flex;
             background: linear-gradient(-45deg, #F08080, #DF6D9F, #5872D2, #0076CC);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
-            height: 30vh;
+            height: 20vh;
             width: 30vw;
             border-radius: 10px;
             padding: 20px;
@@ -94,23 +93,26 @@
             display: inline-block;
             margin-left: 10px;
         }
+
         h2 {
             position: relative;
             display: inline-block;
             color: #fff;
             text-transform: uppercase;
             animation: waviy 1s infinite;
-            animation-delay: calc(.1s );
+            animation-delay: calc(.1s);
 
         }
+
         @keyframes waviy {
-            0%,40%,100% {
+            0%, 40%, 100% {
                 transform: translateY(0)
             }
             20% {
                 transform: translateY(-20px)
             }
         }
+
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -122,6 +124,7 @@
                 background-position: 0% 50%;
             }
         }
+
         @keyframes marquee {
             from {
                 left: 100%;
@@ -131,10 +134,55 @@
                 left: -100%;
             }
         }
+
         @keyframes textclip {
             to {
                 background-position: 200% center;
             }
+        }
+
+        .main {
+            width: 170px;
+            height: 70px;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: #fdcb6e;
+            cursor: pointer;
+            box-shadow: 5px 5px 0 0;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 20px;
+            margin: 1em;
+
+        }
+
+        a {
+            position: absolute;
+            text-decoration: none;
+            color: #000;
+            z-index: 1000;
+        }
+
+        .main::after {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 170px;
+            height: 70px;
+            background: linear-gradient(to right, #ff7675, #e84393);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .main:hover {
+            box-shadow: -5px -5px 0 0;
+            transform: scale(0.9);
+        }
+
+        .main:hover::after {
+            opacity: 1;
         }
     </style>
 </head>
@@ -167,8 +215,11 @@
         culpa qui officia deserunt mollit anim id est laborum.
     </p>
 </div>
+<div class="main">
+    <a id="btn" href="#">Clicketh Me</a>
+</div>
 <script>
-	(function() {
+	(function () {
 		"use strict";
 		// TODO: Uncomment next line and get the main header element by id
 		let mainHeader = document.getElementById("main-header");
@@ -186,7 +237,7 @@
 		let oddListItems = document.getElementsByClassName('odd');
 		// TODO: Set text color on every other list item to grey
 		// TODO: Set text color of li with dbid = 1 to blue
-		for (let i = 0; i < oddListItems.length; i++){
+		for (let i = 0; i < oddListItems.length; i++) {
 			oddListItems[i].style.fontSize = "3rem";
 		}
 		// oddListItems[0].style.background = "#efefef";
@@ -198,6 +249,22 @@
 
 		// TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 		subParagraphs.innerHTML = "Mission Accomplished!";
+
+		const button = document.getElementById("btn");
+		button.addEventListener('click', changeBackgroundColor);
+
+		let i = 0;
+		let g1 = "linear-gradient(160deg, #ffdead, #00D2D9, #D097DD)";
+		let g2 = "linear-gradient(160deg, #C3FCF2, #649B92, #007663)";
+		let g3 = "linear-gradient(160deg, #ffdead, #FE8A7F, #C1554D)";
+		let colorArray = ['navajowhite', g1, g2, g3]
+		function changeBackgroundColor() {
+			document.getElementsByTagName('BODY')[0].style.background = colorArray[i];
+			i++
+            if (i === 4) {
+				i = 0;
+            }
+		}
 	})();
 </script>
 </body>

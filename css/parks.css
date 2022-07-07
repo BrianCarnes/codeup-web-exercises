@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url("../img/National Park Vector.svg");
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+}
+
+nav {
+    display: flex;
+    width: 50%;
+    height: 4rem;
+    background: rgba(222, 222, 222, .5);
+    border-radius: 10px;
+    align-items: center;
+}
+
+main {
+    width: 50%;
+    height: 60%;
+    background: rgba(222, 222, 222, .5);
+    border-radius: 10px;
+}
+
+dt {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+}
+
+dd {
+    font-family: 'Italiana', serif;
+}

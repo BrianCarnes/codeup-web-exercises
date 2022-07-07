@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <title>Konami Code</title>
+    <style>
+        html {
+            background: black;
+        }
+        #lifeUp {
+            display: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: WhiteSmoke;
+            background-image: url("img/1148845.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        @keyframes flipScreen {
+            0% {transform: rotateY(0)}
+            50% {transform: rotateY(180deg)}
+            100% {transform: rotateY(0)}
+        }
+
+        h1 {
+            font-family: 'VT323', monospace;
+            font-size: 8rem;
+        }
+        #title {
+            background-color: rgba(222, 222, 222, .6);
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            border-radius: .2em;
+        }
+        .general {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .st0{fill:#FFFFFF;}
+        .st1{fill:#883A9B;}
+        .st2{fill:none;}
+        .st3{fill:#883A9B;}
+
+        #head, #mask {
+            animation: headmove 1s infinite cubic-bezier(.53,1.19,.9,1.26);
+        }
+        @keyframes headmove {
+            0% {top: 0}
+            50% {top: 3px}
+            75% {top: -2px}
+            100% {top: 0}
+        }
+
+        #face {
+            animation: facemove 1s infinite cubic-bezier(.53,1.19,.9,1.26);
+        }
+
+        @keyframes facemove {
+            0% { top: 0 }
+            50% { top: 0 }
+            75% { top: -2px }
+            100% { top: 0 }
+        }
+
+        #UP {
+            top: 0px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: UPmove 1s infinite ease;
+            animation-delay: 0.5s;
+        }
+        @keyframes UPmove {
+            0% {top: 0; opacity: 0}
+            90% {top: -20px; opacity: 1}
+            100% {top: -20px; opacity: 1}
+        }
+
+        #shadow {
+            width: 60px;
+            height: 10px;
+            position: absolute;
+            background-color: black;
+            top: 88%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            opacity: 0.05;
+            z-index: -1;
+            animation: shadowmove 1s infinite cubic-bezier(.53,1.19,.9,1.26);
+        }
+        @keyframes shadowmove {
+            0% {width: 60px}
+            70% {width: 70px}
+            100% {width: 70px;}
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+<div id="title">
+<h1 id="pageTitle">Konami Code</h1>
+</div>
+<div id="lifeUp">
+    <div id="head" class="general">
+        <svg version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px" y="0px" width="200px" height="200px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
+             xml:space="preserve">
+    <g>
+      <path class="st0" d="M50,53.1C39.4,53,31.2,44.6,31.3,34c0.1-10.2,8.7-18.5,19-18.4c10.4,0.1,18.7,8.6,18.5,19.2
+        C68.5,45,60.2,53.1,50,53.1z"/>
+        <path class="st0" d="M87,52.3c-0.1,1-0.2,2.2-0.4,3.5c-0.1,0.5-0.2,1-0.8,1.1c-0.6,0.1-0.9-0.3-1.1-0.7c-0.8-1.5-1.7-3-2.3-4.6
+        c-2-5.1-3.1-10.4-3.2-15.9c0-1,0.2-2.1,0.5-3.1c0.3-1,0.9-1.1,1.5-0.3c0.7,0.9,1.2,1.9,1.7,2.9c2.1,4.2,3.4,8.6,3.8,13.2
+        C86.8,49.6,86.9,50.8,87,52.3z"/>
+        <path class="st0" d="M13.3,51.9c0.2-6.7,1.8-13,5.3-18.8c0.2-0.4,0.5-0.7,0.8-1c0.5-0.5,1-0.4,1.3,0.2c0.3,0.9,0.5,1.8,0.5,2.6
+        c0.2,2.8-0.3,5.6-0.8,8.4c-0.7,3.6-1.7,7.2-3.4,10.5c-0.4,0.8-0.9,1.5-1.4,2.3c-0.2,0.4-0.6,0.9-1.1,0.6c-0.3-0.2-0.7-0.7-0.7-1.1
+        C13.5,54.5,13.4,53.2,13.3,51.9z"/>
+        <path class="st1" d="M90,52.5c-0.1-2.3,0-4.6-0.3-6.9c-1-8.1-4.1-15.4-9.5-21.5C69.8,12.7,57,8.3,41.8,11.2
+        c-10,1.9-18,7.4-24.1,15.6c-4.3,5.9-6.8,12.5-7.5,19.7C10,48.6,10.1,50.9,10,53c-0.2,4.3,1,8.1,3.3,11.7c2.7,4.2,6.5,7.3,10.8,9.8
+        c0.4,0.2,9.2,6.4,24.5,6.4c15.2,0,26.1-5.7,26.3-5.8c3.4-1.8,6.4-4,9-6.8c2.8-3,4.8-6.4,5.7-10.5C90,56.1,90.1,54.3,90,52.5z
+         M20.3,43.4c-0.7,3.6-1.7,7.2-3.4,10.5c-0.4,0.8-0.9,1.5-1.4,2.3c-0.2,0.4-0.6,0.9-1.1,0.6c-0.3-0.2-0.7-0.7-0.7-1.1
+        c-0.2-1.3-0.3-2.6-0.4-3.9c0.2-6.7,1.8-13,5.3-18.8c0.2-0.4,0.5-0.7,0.8-1c0.5-0.5,1-0.4,1.3,0.2c0.3,0.9,0.5,1.8,0.5,2.6
+        C21.3,37.8,20.8,40.6,20.3,43.4z M50,53.1C39.4,53,31.2,44.6,31.3,34c0.1-10.2,8.7-18.5,19-18.4c10.4,0.1,18.7,8.6,18.5,19.2
+        C68.5,45,60.2,53.1,50,53.1z M86.6,55.7c-0.1,0.5-0.2,1-0.8,1.1c-0.6,0.1-0.9-0.3-1.1-0.7c-0.8-1.5-1.7-3-2.3-4.6
+        c-2-5.1-3.1-10.4-3.2-15.9c0-1,0.2-2.1,0.5-3.1c0.3-1,0.9-1.1,1.5-0.3c0.7,0.9,1.2,1.9,1.7,2.9c2.1,4.2,3.4,8.6,3.8,13.2
+        c0.1,1.2,0.2,2.4,0.3,3.9C86.9,53.3,86.8,54.5,86.6,55.7z"/>
+    </g>
+    </svg>
+    </div>
+    <div id="face" class="general">
+        <svg version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px" y="0px" width="200px" height="200px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
+             xml:space="preserve">
+    <g>
+      <path class="st0" d="M50,86.8c-2.5-0.1-5-0.1-7.5-0.4c-4.2-0.5-7.9-2-10.7-5.3c-2.1-2.5-3.1-5.5-3.4-8.8c-0.1-1.4-0.1-2.9-0.1-4.3
+        c0-0.3,0.3-0.6,0.5-0.7c2.8-1.9,5.9-3.2,9.1-4.1c3.1-0.8,6.2-1.2,9.4-1.2c3.5-0.1,7.1-0.1,10.6,0.4c4.7,0.7,9.2,2.1,13.2,4.8
+        c0.4,0.3,0.6,0.5,0.6,1c0,2.2,0.1,4.3-0.4,6.4c-1.5,6.5-5.7,10.3-12.2,11.5c-1.7,0.3-3.5,0.4-5.2,0.5C52.5,86.7,51.3,86.7,50,86.8
+        C50,86.7,50,86.7,50,86.8z"/>
+        <g>
+        <path class="st1" d="M61.3,73.7c0,1.7-0.2,3.3-0.8,4.9c-0.2,0.5-0.5,1-0.8,1.4c-0.6,0.7-1.3,0.7-1.9,0c-0.4-0.6-0.8-1.2-1-1.9
+          c-0.9-3-0.9-6.1,0.1-9.1c0.2-0.6,0.5-1.1,0.9-1.6c0.6-0.7,1.3-0.7,1.9,0c0.4,0.5,0.7,1,0.9,1.5C61.2,70.5,61.3,72.1,61.3,73.7z"/>
+            <path class="st1" d="M44.4,73.7c0,1.6-0.2,3.2-0.8,4.8c-0.2,0.5-0.5,1-0.8,1.5c-0.6,0.8-1.5,0.9-2.1,0c-0.5-0.6-0.8-1.4-1-2.2
+          c-0.8-2.8-0.8-5.7,0.1-8.5c0.2-0.6,0.5-1.2,0.9-1.7c0.6-0.8,1.5-0.8,2.1,0c0.8,1.1,1.1,2.4,1.3,3.6C44.3,72,44.3,72.9,44.4,73.7z"
+            />
+      </g>
+        <path class="st2" d="M71.1,67.2c-4-2.7-8.4-4.2-13.2-4.8c-3.5-0.5-7.1-0.5-10.6-0.4c-3.2,0.1-6.3,0.4-9.4,1.2
+        c-3.3,0.8-6.4,2.1-9.1,4.1c-0.2,0.2-0.5,0.5-0.5,0.7c0,1.4-0.1,2.9,0.1,4.3c0.3,3.2,1.3,6.2,3.4,8.8c2.7,3.3,6.5,4.9,10.7,5.3
+        c2.5,0.3,5,0.2,7.5,0.4c0,0,0-0.1,0-0.1c1.3,0,2.6,0.1,3.9,0c1.7-0.1,3.5-0.1,5.2-0.5c6.5-1.3,10.7-5,12.2-11.5
+        c0.5-2.1,0.4-4.3,0.4-6.4C71.7,67.8,71.5,67.5,71.1,67.2z"/>
+        <path class="st1" d="M74.9,66.4c-1.5-2.5-9.5-7.5-24.9-7.5c-15.4,0-23.4,5-24.9,7.5c-1.3,2.3-0.5,6.4-0.1,8.9
+        c0.1,0.2,0.2,0.5,0.3,0.9c0.6,4.5,2.8,8,6.7,10.4c3.4,2.1,7.2,2.9,11.1,3.1c2.3,0.1,4.6,0,7,0c0,0,0,0,0,0c1.9,0,3.8,0,5.7,0
+        c3.4-0.1,6.6-0.5,9.8-1.8c5.4-2.2,8.6-6.1,9.3-11.9c0-0.3,0.1-0.4,0.2-0.6C75.4,72.8,76.3,68.7,74.9,66.4z M71.3,74.7
+        c-1.5,6.5-5.7,10.3-12.2,11.5c-1.7,0.3-3.5,0.4-5.2,0.5c-1.3,0.1-2.6,0-3.9,0c0,0,0,0.1,0,0.1c-2.5-0.1-5-0.1-7.5-0.4
+        c-4.2-0.5-7.9-2-10.7-5.3c-2.1-2.5-3.1-5.5-3.4-8.8c-0.1-1.4-0.1-2.9-0.1-4.3c0-0.3,0.3-0.6,0.5-0.7c2.8-1.9,5.9-3.2,9.1-4.1
+        c3.1-0.8,6.2-1.2,9.4-1.2c3.5-0.1,7.1-0.1,10.6,0.4c4.7,0.7,9.2,2.1,13.2,4.8c0.4,0.3,0.6,0.5,0.6,1C71.7,70.4,71.8,72.5,71.3,74.7
+        z"/>
+    </g>
+    </svg>
+    </div>
+    <div id="mask" class="general">
+        <svg version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px" y="0px" width="200px" height="200px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;"
+             xml:space="preserve">
+    <path class="st1" d="M22.3,70.6c12.4-8.2,19.9-8.7,27.7-8.7s15.3,0.5,27.7,8.7V53.2H22.4L22.3,70.6z"/>
+    </svg>
+    </div>
+    <div id="UP">
+        <svg version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px" y="0px" width="50px" height="20px" viewBox="0 0 22.8 8.3" style="enable-background:new 0 0 22.8 8.3;"
+             xml:space="preserve">
+    <style type="text/css">
+
+    </style>
+            <defs>
+    </defs>
+            <g>
+      <path class="st3" d="M1.8,2L1.8,2L0.3,2.7L0,1.3l2.1-1h1.5v7.8H1.8V2z"/>
+                <path class="st3" d="M10.7,0.1v4.7c0,1.4,0.5,2.1,1.5,2.1c1,0,1.5-0.7,1.5-2.1V0.1h1.8v4.5c0,2.5-1.3,3.7-3.4,3.7
+        c-2,0-3.2-1.1-3.2-3.7V0.1H10.7z"/>
+                <path class="st3" d="M17,0.2C17.6,0.1,18.4,0,19.5,0c1.1,0,1.9,0.2,2.5,0.6c0.5,0.4,0.9,1.1,0.9,1.9S22.6,4,22.1,4.4
+        c-0.6,0.6-1.5,0.9-2.6,0.9c-0.2,0-0.5,0-0.6,0v2.9H17V0.2z M18.9,3.8c0.2,0,0.3,0,0.6,0c1,0,1.6-0.5,1.6-1.3c0-0.7-0.5-1.2-1.4-1.2
+        c-0.4,0-0.6,0-0.8,0.1V3.8z"/>
+    </g>
+    </svg>
+    </div>
+    <div id="shadow"></div>
+</div>
+<script>
+	"use strict";
+
+	let konamiCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter";
+	let inputCollector = [];
+	let inputString = "";
+
+	document.addEventListener("keyup", function (event){
+		inputCollector.push(event.key);
+		inputString = inputCollector.join("")
+		if (inputCollector.length > 11) {
+			inputCollector.shift();
+
+		}
+		if (inputString.indexOf(konamiCode) !== -1) {
+			console.log("they're the same")
+			document.getElementById("lifeUp").style.display = "flex";
+			document.getElementById("pageTitle").style.display = "none";
+			document.getElementById("body").style.backgroundBlendMode = "color-dodge";
+			document.getElementById("html").style.animation = "flipScreen 2s infinite";
+			const audio = new Audio("../sounds/smb_1-up.mp3");
+            audio.loop = true;
+            audio.play();
+
+			setTimeout(() => {
+				document.getElementById("lifeUp").style.display = "none";
+				document.getElementById("pageTitle").style.display = "block";
+				audio.loop = false;
+				document.getElementById("html").style.animation = "";
+				document.getElementById("body").style.backgroundBlendMode = "normal";
+            },10000)
+		}
+		console.log(inputCollector);
+		console.log(inputString);
+    })
+
+
+
+
+</script>
+</body>
+</html>
