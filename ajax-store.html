@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<style>
+    h1 {
+        font-size: 3rem;
+        margin-left: calc(100% - 79vw);
+        margin-top: 1.5em;
+        color: #7771BE;
+    }
+    table{
+        width:100%;
+        table-layout: fixed;
+    }
+    .tbl-header{
+        background-color: rgba(255,255,255,0.3);
+        width: 60vw;
+        margin: 4em auto;
+    }
+    .tbl-content{
+        height:300px;
+        overflow-x:auto;
+        margin-top: 0px;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    th{
+        padding: 20px 15px;
+        text-align: left;
+        font-size: 2rem;
+        color: #7771BE;
+        text-transform: uppercase;
+    }
+    td{
+        padding: 15px;
+        text-align: left;
+        vertical-align:middle;
+        font-size: 1.5rem;
+
+        border-bottom: solid 1px rgba(255,255,255,0.1);
+    }
+    tr {
+        color: #995198;
+    }
+    tr:nth-child(odd){
+        color: #418DD1;
+    }
+
+    /* demo styles */
+
+    @font-face {
+        font-family: Vendetta;
+        src: url("../fonts/VendettaOT-medium.otf");
+    }
+
+    body{
+        background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+        background: linear-gradient(to right, #25c481, #25b7c4);
+        font-family: Vendetta, serif;
+    }
+    section{
+        margin: 50px;
+    }
+
+</style>
+<body>
+
+<h1>My Tool Store</h1>
+<div class="tbl-header">
+    <table id="products">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts" class="tbl-content"></tbody>
+    </table>
+</div>
+<script>
+	(async function() {
+		"use strict";
+		// TODO: Create an AJAX GET request for the file under data/inventory.json
+        async function inventory () {
+			const inventory = await fetch("data/inventory.json")
+            return await inventory.json();
+        }
+		// TODO: Take the data from inventory.json and append it to the products table
+		//       HINT: Your data should come back as a JSON object; use console.log() to inspect
+		//             its contents and fields
+		//       HINT: You will want to target #insertProducts for your new HTML elements
+        inventory().then(function(datList){
+			const outputTarget = document.getElementById("insertProducts");
+			datList.forEach(function(tool){
+				const categories = tool.categories.join(" , ")
+				outputTarget.innerHTML += `<tr><td>${tool.title}</td><td>${tool.quantity}</td><td>${tool.price}</td><td>${categories}</td></tr>`
+            })
+        })
+	})();
+</script>
+
+</body>
+</html>
