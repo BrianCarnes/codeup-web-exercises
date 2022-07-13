@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Online Store</title>
 </head>
@@ -91,7 +91,7 @@
 			const outputTarget = document.getElementById("insertProducts");
 			datList.forEach(function(tool){
 				const categories = tool.categories.join(" , ")
-				outputTarget.innerHTML += `<tr><td>${tool.title}</td><td>${tool.quantity}</td><td>${tool.price}</td><td>${categories}</td></tr>`
+				outputTarget.innerHTML += `<tr><td>${tool.title}</td><td>${tool["quantity"]}</td><td>$${tool["price"]}</td><td>${categories}</td></tr>`
             })
         })
 	})();
