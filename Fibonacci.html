@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solving Fibonacci</title>
+    <style>
+        img {
+            border-radius: 10px;
+            width: 300px;
+            height: 225px;
+        }
+        body {
+            font-family: 'Noto Sans Math', sans-serif;
+            font-size: 1.5rem;
+            background-color: #cddeff;
+        }
+        #grid {
+            display: grid;
+            grid-template-areas:
+                "title title title"
+                "formula spiral binet";
+        }
+        #answers {
+            display: grid;
+            grid-template-areas: "fibAnswer binAnswer";
+        }
+        #title {
+            grid-area: title;
+        }
+        #fibfor {
+            grid-area: formula;
+        }
+        #fibspi {
+            grid-area: spiral;
+        }
+        #binfor {
+            grid-area: binet;
+        }
+        #fib {
+            grid-area: fibAnswer;
+            background: rgba(0,0,0,.1);
+            border-radius: 10px;
+            width: 70%;
+        }
+        #bin {
+            grid-area: binAnswer;
+            background: rgba(0,0,0,.1);
+            border-radius: 10px;
+            width: 70%;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="grid">
+        <h1 id="title">Fibonacci Sequence</h1>
+        <div id="fibfor">
+            <h3>Fibonacci Formula</h3>
+            <img id="fibSeq" src="img/Fibonacci-Sequence-Formula-Applications-With-Solved-Examples-1.jpeg" alt="fibonacci sequence">
+        </div>
+        <div id="fibspi">
+            <h3>Fibonacci Spiral</h3>
+            <img src="img/fibonacci-spiral.svg" alt="fibonacci spiral">
+        </div>
+        <div id="binfor">
+            <h3>Binet's Formula</h3>
+            <img src="img/Binet's%20Formula%20for%20Fibonnaci's%20Sequence.png" alt="Binet's Formula">
+        </div>
+    </div>
+    <hr>
+    <div id="answers">
+        <div id="fib"></div>
+        <div id="bin"></div>
+    </div>
+    <script>
+        //iterative algorithm approach//
+        function fibonacci (input) {
+			const sequence = [0,1];
+
+
+			for (i=2; i <= input; i++){
+				sequence[i] = sequence[i - 2] + sequence[i - 1];
+            }
+			return sequence[input];
+        }
+
+		//using Binet's formula//
+		function binet (input) {
+			return Math.round((Math.pow((1 + Math.sqrt(5)) / 2, input)) / Math.sqrt(5));
+        }
+
+		// Benchmark Formula //
+        function benchmark (testCase) {
+			let start = +new Date();
+
+// task starts
+            testCase(91);
+			for (var i = 0; i < 100000000;i++);
+// task ends
+
+			let end = +new Date();
+			return `: Execution time: ${end - start} ms`;
+        }
+		const fib = document.getElementById("fib");
+		const bin = document.getElementById("bin");
+		fib.innerHTML = 'Fibonacci Sequence Iterative Calc at sequence point 91: ' + fibonacci(91).toString();
+		fib.innerHTML += benchmark(fibonacci);
+		bin.innerHTML = 'Binet Formula Calc  at sequence point 91: ' + binet(91).toString();
+		bin.innerHTML += benchmark(binet);
+    </script>
+</body>
+</html>

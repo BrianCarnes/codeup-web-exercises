@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox GL API</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-    <link href='mapbox://styles/bcarnes/cl5jp3lq0000916nyuj2gzr7a' rel='stylesheet' />
     <style>
         @font-face {
             font-family: Vendetta;
@@ -12,6 +12,7 @@
         }
         body {
             background: #4abdac;
+            font-family: Vendetta, serif;
         }
         h1 {
             font-family: Vendetta, serif;
@@ -20,27 +21,134 @@
             margin-bottom: .1em;
             color: #eee;
         }
+        #grid-container {
+            display: grid;
+            grid-template-areas:
+                "title title"
+                "map zoomIn"
+                "map zoomOut"
+                "map drop";
+            justify-content: center;
+        }
+        #title {
+            grid-area: title;
+        }
+        #map {
+            grid-area: map;
+            width: 50vw;
+            height: 70vh;
+            border-radius: 10px;
+        }
+        button {
+            background: radial-gradient(#D199D0, #9A659A);
+            font-family: Vendetta, serif;
+            color: #333;
+            font-size: 1.4rem;
+            margin-left: .5em;
+            opacity: .8;
+            border: none;
+            transition: .3s;
+        }
+        button:hover {
+            opacity: 1;
+            border: #344B47 .05em solid;
+        }
+        #zoom-in{
+            grid-area: zoomIn;
+            height: 4em;
+            width: 4em;
+            border-radius: 50%;
+        }
+        #zoom-out{
+            grid-area: zoomOut;
+            height: 4em;
+            width: 4em;
+            border-radius: 50%;
+        }
+        #drop-marker {
+            grid-area: drop;
+            height: 4em;
+            width: 4em;
+            border-radius: 50%;
+        }
+        #popup {
+            font-family: Vendetta, serif;
+            font-size: 1rem;
+            color: #0C0
+        }
     </style>
 </head>
 <body>
-
-<h1>A Beautiful Mapbox</h1>
-<iframe width='70%' height='800rem' src="https://api.mapbox.com/styles/v1/bcarnes/cl5jp3lq0000916nyuj2gzr7a.html?title=false&access_token=pk.eyJ1IjoiYmNhcm5lcyIsImEiOiJjbDVqb21rZ2kwMjVmM2NwbndnNDJ6Y3F0In0.Hau-BGjobQg2_HKNpZi1Ww&zoomwheel=true#15.19/29.4268/-98.4896" title="Frank" style="border:none; border-radius: 10px; margin: auto;"></iframe>
+<div id="grid-container">
+    <h1 id="title">A Beautiful Mapbox</h1>
+    <div id='map'></div>
+    <button id="zoom-in">+</button>
+    <button id="zoom-out">-</button>
+    <button id="drop-marker">Marker</button>
+</div>
 <script>
-	// TO MAKE THE MAP APPEAR YOU MUST
-	// ADD YOUR ACCESS TOKEN FROM
-	// https://account.mapbox.com
-	mapboxgl.accessToken = 'pk.eyJ1IjoiYmNhcm5lcyIsImEiOiJjbDVqb21rZ2kwMjVmM2NwbndnNDJ6Y3F0In0.Hau-BGjobQg2_HKNpZi1Ww';
-	const map = new mapboxgl.Map({
-		container: 'map', // container ID
-		style: 'mapbox://styles/mapbox/streets-v11', // style URL
-		center: [-98.4896, 29.4268], // starting position [lng, lat]
-		zoom: 16, // starting zoom
-		projection: 'globe' // display the map as a 3D globe
-	});
-	map.on('style.load', () => {
-		map.setFog({}); // Set the default atmosphere style
-	});
+	(async function() {
+
+
+		const accessToken = 'pk.eyJ1IjoiYmNhcm5lcyIsImEiOiJjbDVqb21rZ2kwMjVmM2NwbndnNDJ6Y3F0In0.Hau-BGjobQg2_HKNpZi1Ww';
+		mapboxgl.accessToken = accessToken;
+		const map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			zoom: 13,
+			center: [-98.4916, 29.4252]
+		});
+
+		function getLatLngFromAddress(address, token = accessToken) {
+			const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
+			return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
+				.then(async function(res) {
+					const data = await res.json();
+					return data.features[0].center;
+				});
+		}
+		let coords = await getLatLngFromAddress("Friendswood, TX");
+		console.log(coords);
+
+		const friendswood = new mapboxgl.Marker();
+		friendswood.setLngLat(coords);
+		friendswood.addTo(map);
+
+		const ribot = new mapboxgl.Marker();
+		ribot.setLngLat([14.0473, 40.9343])
+        ribot.addTo(map);
+
+		// when the zoom in button is clicked, decrease the map's zoom level
+		const zoomIn = document.querySelector("#zoom-in");
+		zoomIn.addEventListener("click", function (event) {
+			let currentZoom = map.getZoom();
+			currentZoom++;
+			map.setZoom(currentZoom);
+		});
+
+		const zoomOut = document.querySelector("#zoom-out");
+		zoomOut.addEventListener("click", function (event) {
+			let currentZoom = map.getZoom();
+			currentZoom--;
+			map.setZoom(currentZoom);
+		});
+
+		document.querySelector("#drop-marker").addEventListener("click", function (event) {
+			let popup = new mapboxgl.Popup();
+			popup.setLngLat(map.getCenter())
+			popup.setHTML("<h3 id='popup'>Codeup Rocks!</h3>")
+
+			let marker = new mapboxgl.Marker();
+
+			marker.setPopup(popup);
+			marker.setLngLat(map.getCenter());
+			marker.addTo(map);
+
+		});
+
+		placeMarkerAndPopup(alamoInfo, accessToken, map);
+
+	})();
 </script>
 </body>
 </html>
